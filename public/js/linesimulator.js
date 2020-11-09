@@ -30,7 +30,7 @@
   // Handle key down event for textarea.
   function sendByEnter(e) {
     let code = (e.keyCode ? e.keyCode : e.which);
-    if (code == 13) { //Enter keycode                        
+    if (code == 13) { //Enter keycode
       sendFromChatBox();
     }
   }
@@ -38,7 +38,7 @@
   // Handle key down event for bot textarea
   function sendByEnterFromBot(e) {
     let code = (e.keyCode ? e.keyCode : e.which);
-    if (code == 13) { //Enter keycode                        
+    if (code == 13) { //Enter keycode
       sendTextFromBot();
     }
   }
@@ -46,7 +46,7 @@
   // Copy JSON text only.
   function selectRaw(e) {
     let code = (e.keyCode ? e.keyCode : e.which);
-    if (e.ctrlKey && code == 65) { //CTRL+A 
+    if (e.ctrlKey && code == 65) { //CTRL+A
       let selection = window.getSelection();
       let range = document.createRange();
       range.selectNodeContents($('#rawdata')[0]);
@@ -58,7 +58,7 @@
   // Disable Ctrl+A so that it only works in JSON raw.
   function disableCtrlA(e) {
     let code = (e.keyCode ? e.keyCode : e.which);
-    if (e.ctrlKey && code == 65) { //CTRL+A 
+    if (e.ctrlKey && code == 65) { //CTRL+A
       return false;
     }
   }
@@ -226,7 +226,7 @@ function removeChatItem(obj) {
   $(obj).parents('li').remove();
 }
 
-//#region append chat item 
+//#region append chat item
 // Parse LINE message object into HTML list item.
 // tabindex attribute is necessary to set focus on it for auto scroll to bottom.
 function parseDataAndReturnListItem(data) {
