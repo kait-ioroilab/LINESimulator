@@ -228,7 +228,7 @@ function removeChatItem(obj) {
 
 //#region append chat item 
 // Parse LINE message object into HTML list item.
-// tabindex attribute is neccesary to set focus on it for auto scroll to bottom.
+// tabindex attribute is necessary to set focus on it for auto scroll to bottom.
 function parseDataAndReturnListItem(data) {
   if (data.type == "text") {
     var reply = `<li tabindex="1" data='${JSON.stringify(data)}' class="chat-bot chat-text" onclick='onSelectChatItem($(this))'>${data.text}</li>`;
