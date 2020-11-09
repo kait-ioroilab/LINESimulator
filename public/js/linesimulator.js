@@ -291,8 +291,11 @@ function parseDataAndReturnListItem(data) {
           if (action.text) {
             reply += `<div class="chat-template-buttons-button" onclick="{sendPostback('${action.data}');sendTextMessage('${action.text}');}">${action.label}</div>`;
           }
+          else if (action.displayText) {
+            reply += `<div class="chat-template-buttons-button" onclick="{sendPostback('${action.data}');sendTextMessage('${action.displayText}', true);}">${action.label}</div>`;
+          }
           else {
-            reply += `<div class="chat-template-buttons-button" onclick="{sendTextMessage('${action.data}');}">${action.label}</div>`;
+            reply += `<div class="chat-template-buttons-button" onclick="{sendPostback('${action.data}');}">${action.label}</div>`;
           }
         }
         else if (action.type == "message") {
